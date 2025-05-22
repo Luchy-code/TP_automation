@@ -1,7 +1,7 @@
 Feature: Login
 
   Scenario: Login exitoso
-    Given El usuario accede a la página de login
-    When Ingresa su email y contraseña válidos
-    And Hace clic en el botón de login
-    Then Debería ver el mensaje "Logged in as"
+    Given El usuario accede a la pagina de login
+    When Ingresa su email y contrasena validos
+    And Hace clic en el boton de login
+    Then El usuario deberia ver su nombre de usuario en el menu de usuario "Logged in as"

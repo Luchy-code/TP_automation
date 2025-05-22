@@ -1,4 +1,4 @@
 Feature: Validar Home
-  Scenario: El usuario accede a la página principal
-    Given el usuario navega a la página de inicio
-    Then el título de la página debe ser "Automation Exercise"
+  Scenario: El usuario accede a la pagina principal
+    Given el usuario navega a la pagina de inicio
+    Then Debera ver el mensaje "Home"
