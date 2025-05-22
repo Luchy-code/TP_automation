@@ -16,10 +16,11 @@ public class ProductPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
+
     public void agregarDesdeHover() {
         Actions actions = new Actions(driver);
 
-        // 1. Hacer hover sobre el contenedor del producto
+        //contenedor del hover
         WebElement contenedorProducto = driver.findElement(By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[3]"));
         actions.moveToElement(contenedorProducto).perform();
 
@@ -33,7 +34,6 @@ public class ProductPage {
     }
 
 
-    // 2. Agregar producto desde la página de detalles
     public void agregarProductoDesdeDetalles() {
         // Ir al detalle del producto
         WebElement verProducto = driver.findElement(By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[3]/div/div[2]/ul/li/a"));
@@ -44,7 +44,7 @@ public class ProductPage {
         botonAgregar.click();
     }
 
-    // Confirmación por alerta modal
+    // Confirmación por alerta 
     public boolean mensajeDeConfirmacionVisible(String textoEsperado) {
         WebElement mensaje = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='cartModal']/div/div/div[1]/h4")));
         return mensaje.getText().toLowerCase().contains(textoEsperado.toLowerCase());

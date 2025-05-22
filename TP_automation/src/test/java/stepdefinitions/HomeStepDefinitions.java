@@ -10,7 +10,7 @@ public class HomeStepDefinitions extends BaseTest {
 
     @Given("el usuario navega a la pagina de inicio")
     public void el_usuario_navega_a_la_pagina_de_inicio() {
-        iniciarDriver(); // Asegura que el driver esté iniciado
+        iniciarDriver();
         homePage = new HomePage(getDriver());
         homePage.goToHomePage();
     }
