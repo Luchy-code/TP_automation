@@ -46,7 +46,7 @@ public class SignupPage {
     By createAccountButton = By.xpath("//button[contains(text(),'Create Account')]");
 
     // Mensaje satisfactorio en la página de inicio
-    By loggedInMessageLocator = By.xpath("//*[@id='header']/div/div/div/div[2]/div/ul/li[10]/a");
+    By loggedInMessageLocator = By.xpath("//*[@id=\"form\"]/div/div/div/h2");
 
     public void completarSignupInicial(String nombre, String email) {
         driver.findElement(nameInput).sendKeys(nombre);
