@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-21T23:52:49 ART" name="Default suite" finished-at="2025-05-21T23:53:40 ART" duration-ms="51657">
+  <suite started-at="2025-05-22T00:57:09 ART" name="Default suite" finished-at="2025-05-22T00:58:00 ART" duration-ms="51815">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@7748410a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-05-21T23:52:49 ART" name="Default test" finished-at="2025-05-21T23:53:40 ART" duration-ms="51657">
+    <test started-at="2025-05-22T00:57:09 ART" name="Default test" finished-at="2025-05-22T00:58:00 ART" duration-ms="51815">
       <class name="runners.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-21T23:52:49 ART" name="setUpClass" finished-at="2025-05-21T23:52:50 ART" duration-ms="1553" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-22T00:57:09 ART" name="setUpClass" finished-at="2025-05-22T00:57:10 ART" duration-ms="953" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@36776c32]]>
+                <![CDATA[org.testng.TestRunner@160b4809]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-21T23:52:50 ART" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-21T23:53:00 ART" duration-ms="9507" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-22T00:57:10 ART" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-22T00:57:16 ART" duration-ms="6682" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,34 +37,39 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-21T23:53:00 ART" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-21T23:53:04 ART" duration-ms="4123" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-22T00:57:16 ART" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-22T00:57:23 ART" duration-ms="6457" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Agregar producto desde listado"]]>
+                <![CDATA["Agregar producto desde la pagina principal usando hover"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Agregar producto al carrito"]]>
+                <![CDATA["Agregar productos al carrito"]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "pages.SignupPage.clickCrearCuenta()" because "this.signupPage" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "pages.SignupPage.clickCrearCuenta()" because "this.signupPage" is null
-at stepdefinitions.SingupStepDefinitions.hace_clic_en(SingupStepDefinitions.java:40)
-at ✽.Hace clic en "Add to cart"(file:///C:/Users/SherlockCo/git/TP_automation/TP_automation/src/test/resources/features/add_to_cart.feature:4)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-21T23:53:04 ART" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-21T23:53:14 ART" duration-ms="10280" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-22T00:57:23 ART" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-22T00:57:32 ART" duration-ms="8991" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Agregar producto desde la pagina de detalles"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Agregar productos al carrito"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-22T00:57:32 ART" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-22T00:57:45 ART" duration-ms="12674" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -80,7 +85,7 @@ at ✽.Hace clic en "Add to cart"(file:///C:/Users/SherlockCo/git/TP_automation/
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-21T23:53:14 ART" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-21T23:53:40 ART" duration-ms="25789" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-22T00:57:45 ART" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-05-22T00:58:00 ART" duration-ms="15841" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -96,7 +101,7 @@ at ✽.Hace clic en "Add to cart"(file:///C:/Users/SherlockCo/git/TP_automation/
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-21T23:53:40 ART" name="tearDownClass" finished-at="2025-05-21T23:53:40 ART" duration-ms="167" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.TestRunner@7748410a]" started-at="2025-05-22T00:58:00 ART" name="tearDownClass" finished-at="2025-05-22T00:58:00 ART" duration-ms="42" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

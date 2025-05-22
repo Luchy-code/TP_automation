@@ -1,30 +1,52 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ProductPage {
     WebDriver driver;
+    WebDriverWait wait;
 
     public ProductPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    By firstAddToCartButton = By.xpath("(//a[@class='btn btn-default add-to-cart'])[1]");
-    By viewCartButton = By.xpath("//u[normalize-space()='View Cart']");
-    By confirmationModal = By.id("cartModal");
-    By confirmationText = By.xpath("//div[@id='cartModal']//h4");
+    public void agregarDesdeHover() {
+        Actions actions = new Actions(driver);
 
-    public void clickAddToCart() {
-        driver.findElement(firstAddToCartButton).click();
+        // 1. Hacer hover sobre el contenedor del producto
+        WebElement contenedorProducto = driver.findElement(By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[3]"));
+        actions.moveToElement(contenedorProducto).perform();
+
+        // 2. Esperar que el botón "Add to cart" sea visible y clickable
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        By botonAgregarXPath = By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[3]/div/div[1]/div[2]/div/a");
+        WebElement botonAgregar = wait.until(ExpectedConditions.elementToBeClickable(botonAgregarXPath));
+
+        // 3. Hacer clic
+        botonAgregar.click();
     }
 
-    public String getConfirmationText() {
-        return driver.findElement(confirmationText).getText();
+
+    // 2. Agregar producto desde la página de detalles
+    public void agregarProductoDesdeDetalles() {
+        // Ir al detalle del producto
+        WebElement verProducto = driver.findElement(By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[3]/div/div[2]/ul/li/a"));
+        verProducto.click();
+
+        // Clic en botón "Add to cart" en la página de producto
+        WebElement botonAgregar = driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/button"));
+        botonAgregar.click();
     }
 
-    public void clickViewCart() {
-        driver.findElement(viewCartButton).click();
+    // Confirmación por alerta modal
+    public boolean mensajeDeConfirmacionVisible(String textoEsperado) {
+        WebElement mensaje = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='cartModal']/div/div/div[1]/h4")));
+        return mensaje.getText().toLowerCase().contains(textoEsperado.toLowerCase());
     }
 }
