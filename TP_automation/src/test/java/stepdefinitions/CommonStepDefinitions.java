@@ -19,4 +19,5 @@ public class CommonStepDefinitions {
         Assert.assertTrue(textoReal.contains(textoEsperado),
                 "El mensaje esperado no aparece. Se obtuvo: " + textoReal);
     }
+
 }

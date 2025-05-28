@@ -14,13 +14,18 @@ public class BaseTest {
         driver.manage().window().maximize();
     }
 
-    @AfterTest
     public static void cerrarDriver() {
         if (driver != null) {
-            driver.quit();
+            driver.close();
+            driver = null;
         }
     }
-
+       
+    @AfterTest
+    public void cerrarEscenario() {
+        cerrarDriver(); 
+    }
+    
     public static WebDriver getDriver() {
         return driver;
     }

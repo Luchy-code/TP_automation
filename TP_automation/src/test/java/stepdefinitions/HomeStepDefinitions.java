@@ -21,4 +21,5 @@ public class HomeStepDefinitions extends BaseTest {
         Assert.assertTrue(textoReal.contains(mensajeEsperado), 
             "El mensaje esperado no aparece. Se obtuvo: " + textoReal);
     }
+
 }

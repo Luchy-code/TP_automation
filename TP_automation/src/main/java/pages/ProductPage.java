@@ -11,42 +11,37 @@ public class ProductPage {
     WebDriver driver;
     WebDriverWait wait;
 
+    private By contenedorHoverProducto = By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[3]");
+    private By botonAgregarHover = By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[3]/div/div[1]/div[2]/div/a");
+    private By linkVerDetalleProducto = By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[2]/div/div[2]/ul/li/a");
+    private By botonAgregarDesdeDetalle = By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/button");
+    private By mensajeConfirmacionModal = By.xpath("//*[@id='cartModal']/div/div/div[1]/h4");
+
     public ProductPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-
     public void agregarDesdeHover() {
         Actions actions = new Actions(driver);
-
-        //contenedor del hover
-        WebElement contenedorProducto = driver.findElement(By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[3]"));
+        WebElement contenedorProducto = driver.findElement(contenedorHoverProducto);
         actions.moveToElement(contenedorProducto).perform();
 
-        // 2. Esperar que el botón "Add to cart" sea visible y clickable
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        By botonAgregarXPath = By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[3]/div/div[1]/div[2]/div/a");
-        WebElement botonAgregar = wait.until(ExpectedConditions.elementToBeClickable(botonAgregarXPath));
-
-        // 3. Hacer clic
+        WebElement botonAgregar = wait.until(ExpectedConditions.elementToBeClickable(botonAgregarHover));
         botonAgregar.click();
     }
-
 
     public void agregarProductoDesdeDetalles() {
-        // Ir al detalle del producto
-        WebElement verProducto = driver.findElement(By.xpath("/html/body/section[2]/div/div/div[2]/div[1]/div[3]/div/div[2]/ul/li/a"));
+        WebElement verProducto = driver.findElement(linkVerDetalleProducto);
         verProducto.click();
 
-        // Clic en botón "Add to cart" en la página de producto
-        WebElement botonAgregar = driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div[2]/div[2]/div/span/button"));
+        WebElement botonAgregar = driver.findElement(botonAgregarDesdeDetalle);
         botonAgregar.click();
     }
 
-    // Confirmación por alerta 
     public boolean mensajeDeConfirmacionVisible(String textoEsperado) {
-        WebElement mensaje = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='cartModal']/div/div/div[1]/h4")));
+        WebElement mensaje = wait.until(ExpectedConditions.visibilityOfElementLocated(mensajeConfirmacionModal));
         return mensaje.getText().toLowerCase().contains(textoEsperado.toLowerCase());
     }
 }

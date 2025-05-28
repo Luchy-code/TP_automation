@@ -13,6 +13,7 @@ import java.util.Random;
 public class SignupPage {
     Random random;
     WebDriver driver;
+    WebDriverWait wait;
 
     public SignupPage(WebDriver driver) {
         random = new Random();
@@ -78,7 +79,7 @@ public class SignupPage {
     }
 
     public void clickCrearCuenta() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         WebElement boton = wait.until(ExpectedConditions.elementToBeClickable(createAccountButton));
         boton.click();
     }

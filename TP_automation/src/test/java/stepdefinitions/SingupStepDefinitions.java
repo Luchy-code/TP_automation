@@ -7,7 +7,7 @@ import io.cucumber.java.en.*;
 import pages.SignupPage;
 import utils.BaseTest;
 
-public class SingupStepDefinitions {
+public class SingupStepDefinitions  extends BaseTest {
 
     WebDriver driver;
     SignupPage signupPage;
@@ -16,7 +16,7 @@ public class SingupStepDefinitions {
     public void el_usuario_accede_a_la_pagina_de_registro() {
         BaseTest.iniciarDriver();
         driver = BaseTest.getDriver();
-        driver.get("https://automationexercise.com/login");
+        driver.get("https://automationexercise.com/login"); //url
         signupPage = new SignupPage(driver);
     }
 
@@ -46,4 +46,5 @@ public class SingupStepDefinitions {
         Assert.assertTrue(textoReal.contains(mensajeEsperado),
                 "El mensaje esperado no aparece. Se obtuvo: " + textoReal);
     }
+
 }

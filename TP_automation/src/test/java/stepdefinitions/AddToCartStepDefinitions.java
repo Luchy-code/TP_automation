@@ -15,7 +15,7 @@ public class AddToCartStepDefinitions extends BaseTest{
     public void El_usuario_accede_a_la_pagina_principal() {
         BaseTest.iniciarDriver();
         driver = BaseTest.getDriver();
-        driver.get("https://automationexercise.com");
+        driver.get("https://automationexercise.com"); //url
         productPage = new ProductPage(driver);
     }
 
@@ -34,4 +34,5 @@ public class AddToCartStepDefinitions extends BaseTest{
         boolean aparece = productPage.mensajeDeConfirmacionVisible(mensajeEsperado);
         Assert.assertTrue(aparece, "No se encontró el mensaje esperado: " + mensajeEsperado);
     }
+
 }
